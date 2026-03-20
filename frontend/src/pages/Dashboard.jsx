@@ -65,11 +65,14 @@ const Dashboard = () => {
     );
   }
 
+  const user = JSON.parse(localStorage.getItem('bp_user') || '{"name":"User"}');
+
   return (
     <div className="page-content">
       <div className="page-header">
-        <h1 className="page-title">Browse Properties</h1>
+        <h1 className="page-title">Welcome back, {user.name}</h1>
         <p className="page-subtitle">
+          <span className="card-type-badge" style={{position: 'static', marginRight: '12px'}}>Role: Buyer</span>
           {properties.length} properties available — tap ❤ to save your favourites
         </p>
       </div>
